@@ -89,5 +89,23 @@ export const editorialBoardMembers: EditorialBoardMember[] = [
     department: "Department of Economics",
     institution: "Karnataka state open university 570006",
     email: "shivakumareconomics@gmail.com"
+  },
+  {
+    id: "sturlepedersen",
+    name: "Sturle H. Pedersen",
+    designation: "Honorary Consul & Chairman",
+    department: "Greenstat Hydrogen India",
+    institution: "Bergen, Norway",
+    email: "sturle.pedersen@greenstat.no",
+    imageUrl: "/Sturle_H_Pederson.jpeg"
+  },
+  {
+    id: "irshadcontractor",
+    name: "Irshad Contractor",
+    designation: "Managing Director",
+    department: "Infrastructure & Development",
+    institution: "Dubai, UAE",
+    email: "irshad.contractor@example.com",
+    imageUrl: "/Irshad_Contractor.jpeg"
   }
 ];

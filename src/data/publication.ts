@@ -31,7 +31,9 @@ export interface PublicationInfo {
   };
   imprint: {
     title: string;
+    publisher?: string;
     place: string;
+    address?: string;
     medium: string;
     language: string;
     issn: string;
@@ -39,9 +41,9 @@ export interface PublicationInfo {
 }
 
 export const publicationData: PublicationInfo = {
-  title: "THE GLOBE ECONOMIST",
-  subtitle: "Integrated Economics Review",
-  tagline: "Journal of International Economics, Sustainable Development & Policy Redesign",
+  title: "GLOBAL ECONOMIST",
+  subtitle: "Journal of International Economics, Sustainable Development & Policy Redesign",
+  tagline: "Integrated Economics Review",
   mastheadTagline: "A review of integrated economics, natural resilience and social development",
   currentIssue: {
     volume: "Vol. III",
@@ -81,8 +83,10 @@ export const publicationData: PublicationInfo = {
     ],
   },
   imprint: {
-    title: "The Globe Economist — Integrated Economics Review",
+    title: "GLOBAL ECONOMIST",
+    publisher: "The Globe Economist",
     place: "New Delhi, India",
+    address: "14, Satsang Vihar Marg, New Delhi - 110 067",
     medium: "Digital",
     language: "English (with selected regional commentary)",
     issn: "Application in process",

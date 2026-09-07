@@ -5,6 +5,7 @@ import { EditorialCard } from '../components/editorial/EditorialCard';
 import { EditorialNote } from '../components/editorial/EditorialNote';
 import { featuredHomeAnalyses, briefingNames } from '../data/analyses';
 import { currentIssueData } from '../data/issue';
+import { publicationData } from '../data/publication';
 import { MetaTags } from '../components/seo/MetaTags';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
@@ -145,6 +146,56 @@ export const Home: React.FC = () => {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Publication Preliminary Details (ISSN Requirement) */}
+      <section className="bg-ivory-paper border border-editorial-border p-8 sm:p-10 shadow-sm" aria-labelledby="publication-info-heading">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="editorial-kicker text-gold-dark font-bold">PUBLICATION RECORD</span>
+        </div>
+        
+        <h2 id="publication-info-heading" className="font-serif text-2xl sm:text-3xl font-bold text-navy-deep mb-6 pb-3 border-b border-editorial-border">
+          Preliminary Details
+        </h2>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left font-sans border-collapse">
+            <tbody className="divide-y divide-editorial-border">
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Title</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.title}</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Starting Year</th>
+                <td className="py-3 text-sm text-charcoal/90">2026</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Frequency</th>
+                <td className="py-3 text-sm text-charcoal/90">Monthly</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Format of Publication</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.medium}</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Subject</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.subtitle}</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Language</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.language}</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Publisher's Name</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.publisher}</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Publisher's Address</th>
+                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.address}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </div>
