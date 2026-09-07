@@ -10,14 +10,19 @@ export const ProfileCard: React.FC = () => {
       {/* Editor-in-Chief Profile */}
       <section className="bg-ivory-paper border border-editorial-border p-6 sm:p-8 md:p-10 relative">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-editorial-border">
-          <div>
-            <span className="editorial-kicker text-gold-dark">EDITOR-IN-CHIEF</span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-deep mt-1">
-              {editorInChief.fullName}
-            </h2>
-            <p className="font-serif text-lg text-gold-dark italic mt-0.5">
-              ({editorInChief.shortName})
-            </p>
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 border-2 border-gold-muted/40 shadow-sm">
+              <img src="/shastri.jpg" alt={editorInChief.fullName} className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <span className="editorial-kicker text-gold-dark">EDITOR-IN-CHIEF</span>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-deep mt-1">
+                {editorInChief.fullName}
+              </h2>
+              <p className="font-serif text-lg text-gold-dark italic mt-0.5">
+                ({editorInChief.shortName})
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2 md:self-center">

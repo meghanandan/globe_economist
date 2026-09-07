@@ -9,11 +9,19 @@ interface BoardMemberCardProps {
 export const BoardMemberCard: React.FC<BoardMemberCardProps> = ({ member }) => {
   return (
     <div className="bg-ivory-paper border border-editorial-border p-6 flex flex-col h-full hover:shadow-sm transition-shadow">
-      <div className="flex-1">
-        <h3 className="font-serif text-xl font-bold text-navy-deep">{member.name}</h3>
-        <p className="text-sm font-sans text-gold-dark font-medium mt-1 mb-4">{member.designation}</p>
+      <div className="flex-1 flex flex-col sm:flex-row gap-4 mb-6">
+        {member.imageUrl && (
+          <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border border-gold-muted/40 shadow-sm">
+            <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+          </div>
+        )}
+        <div>
+          <h3 className="font-serif text-xl font-bold text-navy-deep">{member.name}</h3>
+          <p className="text-sm font-sans text-gold-dark font-medium mt-1">{member.designation}</p>
+        </div>
+      </div>
         
-        <div className="space-y-2 mb-6">
+      <div className="space-y-2 mb-6">
           <p className="text-sm text-charcoal/90 font-sans font-semibold">
             {member.department}
           </p>
@@ -44,9 +52,9 @@ export const BoardMemberCard: React.FC<BoardMemberCardProps> = ({ member }) => {
             <span>View Academic Profile</span>
           </a>
         ) : (
-          <span className="text-xs font-sans text-muted flex items-center gap-1.5">
+          <span className="text-[11px] font-sans text-muted flex items-center gap-1.5 uppercase tracking-wider font-semibold">
             <ExternalLink size={14} />
-            <span>Profile verification in progress</span>
+            <span>Profile Link Pending</span>
           </span>
         )}
       </div>
