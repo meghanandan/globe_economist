@@ -19,7 +19,6 @@ export interface PublicationInfo {
     primary: string;
     alternate: string;
   };
-  phone: string;
   issn: string;
   editorInChief: {
     name: string;
@@ -42,31 +41,30 @@ export interface PublicationInfo {
 
 export const publicationData: PublicationInfo = {
   title: "GLOBAL ECONOMIST",
-  subtitle: "Journal of International Economics, Sustainable Development & Policy Redesign",
+  subtitle: "Journal of International Economics, Sustainable Development, AI Economics & Policy Optimization and Redesign",
   tagline: "Integrated Economics Review",
   mastheadTagline: "A review of integrated economics, natural resilience and social development",
   currentIssue: {
-    volume: "Vol. III",
-    issue: "Issue 09",
-    month: "September",
+    volume: "Vol. 1",
+    issue: "Issue 1",
+    month: "January–March",
     year: "2026",
-    fullString: "Vol. III · Issue 09 · September 2026",
-    topBarLeft: "DIGITAL PUBLICATION · NEW DELHI · TUESDAY, 1 SEPTEMBER 2026",
-    topBarRight: "VOL. III · ISSUE 09 · INTEGRATED ECONOMICS REVIEW",
+    fullString: "Vol. 1 · Issue 1 · January–March 2026",
+    topBarLeft: "DIGITAL SERIAL · NEW DELHI · ISSN APPLICATION NO. 76453",
+    topBarRight: "VOL. 1 · ISSUE 1 · QUARTERLY REVIEW",
   },
   location: "New Delhi, India",
   domain: "globeeconomist.com",
   relatedSite: "https://profdrgvr.com",
   emails: {
-    primary: "drgvr7@gmail.com",
-    alternate: "profdrgvr@gmail.com",
+    primary: "profdrgvr@gmail.com",
+    alternate: "drgvr7@gmail.com",
   },
-  phone: "+91 98999 77731",
-  issn: "Application in process",
+  issn: "Under process — Application No. 76453",
   editorInChief: {
     name: "Prof. Dr. GVR Shastri",
     shortName: "Prof. Dr. GVR Shastri",
-    fullName: "Prof. Dr. Gadepalli Venkatarama Sastry",
+    fullName: "Prof. Dr. Gadepalli Venkatarama Shastri",
     honorificDegrees: "D.Litt. · Ph.D. IIT Delhi · SEP Stanford · SELP Harvard · FCMA",
     credentials: [
       "D.Litt. in Integrated Economics (Tumkur University)",
@@ -78,17 +76,17 @@ export const publicationData: PublicationInfo = {
     ],
     roles: [
       "Senior Economist, Author and International Arbitrator",
-      "Chairman, Coastal India Development Council (CICD)",
+      "Chairman, Coastal India Development Council (CIDC)",
       "Founder & Lifetime Chairman, Sri Hariom Shastri Charitable Trust",
     ],
   },
   imprint: {
-    title: "GLOBAL ECONOMIST",
-    publisher: "The Globe Economist",
+    title: "Global Economist: Journal of International Economics, Sustainable Development, AI Economics & Policy Optimization and Redesign",
+    publisher: "SRI HARIOM SHASTRI CHARITABLE TRUST",
     place: "New Delhi, India",
-    address: "14, Satsang Vihar Marg, New Delhi - 110 067",
-    medium: "Digital",
-    language: "English (with selected regional commentary)",
-    issn: "Application in process",
+    address: "Flat No. 70, Anupam Apartments, Saket, New Delhi – 110 068, India",
+    medium: "Online",
+    language: "English",
+    issn: "Under process — Application No. 76453",
   },
 };

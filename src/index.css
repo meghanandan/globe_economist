@@ -97,4 +97,13 @@
     background-color: #0B1D33;
     color: #F7F3E8;
   }
+
+  /* Hide scrollbar utility for mobile-friendly scrollable tabs */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

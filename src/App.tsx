@@ -5,6 +5,7 @@ import { CurrentIssue } from './pages/CurrentIssue';
 import { Analyses } from './pages/Analyses';
 import { About } from './pages/About';
 import { EditorialBoard } from './pages/EditorialBoard';
+import { BoardMemberDetail } from './pages/BoardMemberDetail';
 import { Archives } from './pages/Archives';
 import { Contact } from './pages/Contact';
 import { ArticleView } from './pages/ArticleView';
@@ -18,6 +19,7 @@ export const App = () => {
         <Route path="analyses" element={<Analyses />} />
         <Route path="about" element={<About />} />
         <Route path="editorial-board" element={<EditorialBoard />} />
+        <Route path="editorial-board/:id" element={<BoardMemberDetail />} />
         <Route path="archives" element={<Archives />} />
         <Route path="contact" element={<Contact />} />
         <Route path="article/:id" element={<ArticleView />} />
