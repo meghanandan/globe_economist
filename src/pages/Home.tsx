@@ -5,7 +5,6 @@ import { EditorialCard } from '../components/editorial/EditorialCard';
 import { EditorialNote } from '../components/editorial/EditorialNote';
 import { featuredHomeAnalyses, briefingNames } from '../data/analyses';
 import { currentIssueData } from '../data/issue';
-import { publicationData } from '../data/publication';
 import { MetaTags } from '../components/seo/MetaTags';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
@@ -163,36 +162,66 @@ export const Home: React.FC = () => {
           <table className="w-full text-left font-sans border-collapse">
             <tbody className="divide-y divide-editorial-border">
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Title</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.title}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep w-1/3">Title</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Global Economist: Journal of International Economics, Sustainable Development, AI Economics & Policy Optimization and Redesign</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Starting Year</th>
-                <td className="py-3 text-sm text-charcoal/90">2026</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Starting year</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">2026</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Frequency</th>
-                <td className="py-3 text-sm text-charcoal/90">Monthly</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Frequency</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Quarterly</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Format of Publication</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.medium}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Format of publication</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Online</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Subject</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.subtitle}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Subject</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Economics</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Language</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.language}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Language</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">English</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Publisher's Name</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.publisher}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Publication detail</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Peer-reviewed digital journal / serial</td>
               </tr>
               <tr>
-                <th className="py-3 pr-4 text-sm font-semibold text-navy-deep w-1/3">Publisher's Address</th>
-                <td className="py-3 text-sm text-charcoal/90">{publicationData.imprint.address}</td>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Current issue</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Vol. 1, Issue 1, January–March 2026</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Publishing body</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">SRI HARIOM SHASTRI CHARITABLE TRUST</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Owner / Responsible person</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">PROF. DR. GADEPALLI VENKATA RAMA SASTRY (Prof. Dr. GVR Shastri)</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Publisher's address</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">Flat No. 70, Anupam Apartments, Saket, New Delhi – 110 068, India</td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Website</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">
+                  <a href="https://www.globeeconomist.com" className="text-navy-deep hover:text-gold-dark underline">
+                    https://www.globeeconomist.com
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">Official E-mail</th>
+                <td className="py-3 text-xs sm:text-sm text-charcoal/90">
+                  <a href="mailto:profdrgvr@gmail.com" className="text-navy-deep hover:text-gold-dark underline">profdrgvr@gmail.com</a>
+                </td>
+              </tr>
+              <tr>
+                <th className="py-3 pr-4 text-xs sm:text-sm font-semibold text-navy-deep">ISSN status</th>
+                <td className="py-3 text-xs sm:text-sm font-semibold text-gold-dark">Under process — Application No. 76453</td>
               </tr>
             </tbody>
           </table>

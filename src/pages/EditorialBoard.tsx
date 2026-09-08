@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ProfileCard } from '../components/editorial/ProfileCard';
 import { BoardMemberCard } from '../components/editorial/BoardMemberCard';
 import { editorialBoardMembers } from '../data/editorialBoard';
 import { MetaTags } from '../components/seo/MetaTags';
 
 export const EditorialBoard: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'Foreign' | 'Core' | 'Research'>('Foreign');
+
+  const coreCount = editorialBoardMembers.filter(m => m.category === 'Core').length;
+  const foreignCount = editorialBoardMembers.filter(m => m.category === 'Foreign').length;
+  const researchCount = editorialBoardMembers.filter(m => m.category === 'Research').length;
+
+  const tabs = [
+    { 
+      id: 'Foreign' as const, 
+      title: 'International Members', 
+      subtitle: 'Foreign Members of the Editorial Board',
+      count: foreignCount 
+    },
+    { 
+      id: 'Core' as const, 
+      title: 'Indian Editorial Board', 
+      subtitle: 'Indian Members of the Editorial Board',
+      count: coreCount 
+    },
+    { 
+      id: 'Research' as const, 
+      title: 'Economics Department', 
+      subtitle: 'Studies & Research Faculty',
+      count: researchCount 
+    },
+  ];
+
+  const currentMembers = editorialBoardMembers.filter(m => m.category === activeTab);
+
   return (
     <div className="space-y-12 max-w-5xl mx-auto">
       <MetaTags
@@ -26,17 +55,57 @@ export const EditorialBoard: React.FC = () => {
       {/* Profile & Imprint */}
       <ProfileCard />
 
-      {/* Editorial Board Members */}
-      <section className="mt-12" aria-labelledby="board-members-heading">
-        <div className="flex items-center gap-2 mb-6">
-          <span className="editorial-kicker text-gold-dark">EDITORIAL BOARD</span>
+      {/* Board Members Tabs */}
+      <section className="mt-12" aria-labelledby="board-tabs-heading">
+        <div className="mb-4">
+          <span className="editorial-kicker text-gold-dark">BOARD ROSTER & SECTIONS</span>
+          <h2 id="board-tabs-heading" className="font-serif text-2xl font-bold text-navy-deep mt-0.5">
+            Select Board Section
+          </h2>
         </div>
-        <h2 id="board-members-heading" className="font-serif text-2xl sm:text-3xl font-bold text-navy-deep mb-8 pb-3 border-b border-editorial-border">
-          Board Members
-        </h2>
-        
+
+        {/* Fully Responsive Tabs (Adapts cleanly from mobile 320px to desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 mb-8">
+          {tabs.map(tab => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveTab(tab.id)}
+                className={`p-3.5 sm:p-4 text-left transition-all border flex flex-col justify-between relative shadow-sm cursor-pointer select-none ${
+                  isActive
+                    ? 'bg-navy-deep text-ivory-warm border-navy-deep ring-1 ring-gold-dark/40'
+                    : 'bg-ivory-paper hover:bg-white text-charcoal/90 hover:text-navy-deep border-editorial-border hover:border-gold-muted/50'
+                }`}
+              >
+                {isActive && (
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gold-dark" />
+                )}
+                <div className="flex items-center justify-between gap-2 w-full">
+                  <span className={`font-serif font-bold text-base sm:text-lg leading-tight ${isActive ? 'text-ivory-warm' : 'text-navy-deep'}`}>
+                    {tab.title}
+                  </span>
+                  <span className={`text-[11px] font-mono font-bold px-2 py-0.5 rounded-full shrink-0 ${
+                    isActive ? 'bg-gold-dark text-navy-deep' : 'bg-ivory-warm border border-editorial-border text-muted'
+                  }`}>
+                    {tab.count}
+                  </span>
+                </div>
+                <p className={`text-xs font-sans mt-1.5 ${
+                  isActive ? 'text-gold-light/90' : 'text-muted'
+                }`}>
+                  {tab.subtitle}
+                </p>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {editorialBoardMembers.map((member) => (
+          {currentMembers.map((member) => (
             <BoardMemberCard key={member.id} member={member} />
           ))}
         </div>

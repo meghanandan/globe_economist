@@ -1,14 +1,14 @@
 import React from 'react';
 import { publicationData } from '../data/publication';
 import { MetaTags } from '../components/seo/MetaTags';
-import { Mail, Phone, ExternalLink, MapPin, Building, FileCheck } from 'lucide-react';
+import { Mail, ExternalLink, MapPin, Building, FileCheck } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
     <div className="space-y-10 max-w-4xl mx-auto">
       <MetaTags
         title="Contact the Editorial Office"
-        description="Official correspondence details for The Globe Economist Editorial Office in New Delhi, India. Email, telephone, and accreditation protocol."
+        description="Official correspondence details for The Globe Economist Editorial Office in New Delhi, India. Email and accreditation protocol."
       />
 
       {/* Header */}
@@ -100,19 +100,6 @@ export const Contact: React.FC = () => {
                   className="text-gold-dark hover:underline font-medium"
                 >
                   {publicationData.emails.alternate}
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Phone size={18} className="text-gold-dark shrink-0 mt-0.5" />
-              <div>
-                <p className="font-semibold text-navy-deep">Editorial Telephone</p>
-                <a
-                  href={`tel:${publicationData.phone.replace(/\s+/g, '')}`}
-                  className="text-gold-dark hover:underline font-medium"
-                >
-                  {publicationData.phone}
                 </a>
               </div>
             </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { publicationData } from '../../data/publication';
-import { Mail, Phone, ExternalLink } from 'lucide-react';
+import { Mail, ExternalLink } from 'lucide-react';
 
 export const ProfileCard: React.FC = () => {
-  const { editorInChief, imprint, emails, phone, relatedSite } = publicationData;
+  const { editorInChief, imprint, emails, relatedSite } = publicationData;
 
   return (
     <div className="space-y-12">
@@ -123,9 +123,6 @@ export const ProfileCard: React.FC = () => {
           <div className="flex items-center gap-4">
             <a href={`mailto:${emails.primary}`} className="hover:text-gold-dark flex items-center gap-1">
               <Mail size={12} /> {emails.primary}
-            </a>
-            <a href={`tel:${phone.replace(/\s+/g, '')}`} className="hover:text-gold-dark flex items-center gap-1">
-              <Phone size={12} /> {phone}
             </a>
           </div>
         </div>

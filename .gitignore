@@ -1,4 +1,5 @@
 ﻿node_modules
 .dist
 dist
-.env
+config.bat
+node_modules
